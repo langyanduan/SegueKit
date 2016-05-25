@@ -63,16 +63,20 @@ public extension UIViewController {
     
     public func rx_segue<O: ObservableType>(identifier: String)
         -> (source: O)
-        -> (handler: UIStoryboardSegue -> Void)
+        -> (handler: (UIStoryboardSegue, O.E) -> Void)
         -> Disposable {
         return { source in
             return { handler in
                 return source.subscribe { [weak self] (event) in
-                    self?.performSegue(with: identifier, handler: handler)
                     switch event {
+                    case .Next(let element):
+                        let handlerWrapper: UIStoryboardSegue -> Void = { (segue) in
+                            handler(segue, element)
+                        }
+                        self?.performSegue(with: identifier, handler: handlerWrapper)
                     case .Error(let error):
                         assert(false, "Binding error to UI: \(error)")
-                    default:
+                    case .Completed:
                         break
                     }
                 }
@@ -88,7 +92,7 @@ public protocol RxSeguePerformerProtocol {
     func rx_segue(identifier: String) -> Observable<UIStoryboardSegue>
     func rx_segue<O: ObservableType>(identifier: String)
         -> (source: O)
-        -> (handler: UIStoryboardSegue -> Void)
+        -> (handler: (UIStoryboardSegue, O.E) -> Void)
         -> Disposable
 }
 
@@ -106,14 +110,14 @@ public extension RxSeguePerformerProtocol where Self: UIViewController {
 
     public func rx_segue<Segue, Destination, O: ObservableType>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
         -> (source: O)
-        -> (handler: (UIStoryboardSegue, Self, Destination) -> Void)
+        -> (handler: (UIStoryboardSegue, Self, Destination, O.E) -> Void)
         -> Disposable {
         return { source in
             return { [weak self] handler in
-                let handlerWrapper = { (segue: UIStoryboardSegue) in
+                let handlerWrapper = { (segue: UIStoryboardSegue, element: O.E) in
                     let source = segue.sourceViewController as! Self
                     let destination = segue.destinationViewController as! Destination
-                    handler(segue, source, destination)
+                    handler(segue, source, destination, element)
                 }
                 return self?.rx_segue(identifier.identifier)(source: source)(handler: handlerWrapper) ?? NopDisposable.instance
             }
