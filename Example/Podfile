@@ -1,0 +1,17 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+inhibit_all_warnings!
+
+target 'SegueKit_Example' do
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxOptional'
+    pod 'RxDataSources'
+    pod 'R.swift'
+    pod 'SegueKit/Extension', :path => '../'
+end
+
+target 'SegueKit_Tests' do
+    
+end
