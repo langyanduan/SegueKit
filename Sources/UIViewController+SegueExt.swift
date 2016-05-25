@@ -20,12 +20,16 @@ extension UIViewController: SeguePerformerProtocol { }
 
 public extension SeguePerformerProtocol where Self: UIViewController {
     public func performSegue<Segue, Destination>(with identifier: StoryboardSegueIdentifier<Segue, Self, Destination>,
-                      handler: (UIStoryboardSegue, Self, Destination) -> Void)
+                      handler: (TypedStoryboardSegueInfo<Segue, Self, Destination>) -> Void)
     {
         performSegue(with: identifier.identifier) { (segue) in
             let source = segue.sourceViewController as! Self
             let destination = segue.destinationViewController as! Destination
-            handler(segue, source, destination)
+            if let segueInfo = TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: segue) {
+                handler(segueInfo)
+            } else {
+                assertionFailure()
+            }
         }
     }
 }
@@ -75,7 +79,7 @@ public extension UIViewController {
                         }
                         self?.performSegue(with: identifier, handler: handlerWrapper)
                     case .Error(let error):
-                        assert(false, "Binding error to UI: \(error)")
+                        assertionFailure("Binding error to UI: \(error)")
                     case .Completed:
                         break
                     }
@@ -100,24 +104,28 @@ extension UIViewController: RxSeguePerformerProtocol { }
 
 public extension RxSeguePerformerProtocol where Self: UIViewController {
     
-    public func rx_performSegue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>) -> Observable<TypedStoryboardSegueInfo<Segue, Self, Destination>> {
+    public func rx_performSegue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
+        -> Observable<TypedStoryboardSegueInfo<Segue, Self, Destination>> {
         return rx_performSegue(identifier.identifier).map { TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0)! }
     }
     
-    public func rx_segue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>) -> Observable<TypedStoryboardSegueInfo<Segue, Self, Destination>> {
+    public func rx_segue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
+        -> Observable<TypedStoryboardSegueInfo<Segue, Self, Destination>> {
         return rx_segue(identifier.identifier).map { TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0)! }
     }
 
     public func rx_segue<Segue, Destination, O: ObservableType>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
         -> (source: O)
-        -> (handler: (UIStoryboardSegue, Self, Destination, O.E) -> Void)
+        -> (handler: (TypedStoryboardSegueInfo<Segue, Self, Destination>, O.E) -> Void)
         -> Disposable {
         return { source in
             return { [weak self] handler in
                 let handlerWrapper = { (segue: UIStoryboardSegue, element: O.E) in
-                    let source = segue.sourceViewController as! Self
-                    let destination = segue.destinationViewController as! Destination
-                    handler(segue, source, destination, element)
+                    if let segueInfo = TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: segue) {
+                        handler(segueInfo, element)
+                    } else {
+                        assertionFailure()
+                    }
                 }
                 return self?.rx_segue(identifier.identifier)(source: source)(handler: handlerWrapper) ?? NopDisposable.instance
             }

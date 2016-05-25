@@ -44,8 +44,8 @@ class ViewController: UIViewController {
     
     // with R.swift
     @IBAction func onBtnB(sender: AnyObject) {
-        performSegue(with: R.segue.viewController.b) { (segue, source, destination) in
-            destination.view.backgroundColor = UIColor.greenColor()
+        performSegue(with: R.segue.viewController.b) { (segue) in
+            segue.destinationViewController.view.backgroundColor = UIColor.greenColor()
         }
     }
     
@@ -97,8 +97,8 @@ class B: UIViewController {
         super.viewDidLoad()
         
         // with Rx + R.swift
-        button.rx_tap.bindTo(rx_segue(R.segue.b.b)) { (segue, source, destination) in
-            destination.view.backgroundColor = UIColor.brownColor()
+        button.rx_tap.bindTo(rx_segue(R.segue.b.b)) { (segue, _) in
+            segue.destinationViewController.view.backgroundColor = UIColor.brownColor()
         }.addDisposableTo(disposeBag)
     }
 
@@ -148,6 +148,12 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod "SegueKit"
+```
+
+if you want use the feature for RxSwift and R.swfit, add the following line to your Podfile:
+
+```ruby
+pod "SegueKit/Extension"
 ```
 
 ### ~~Carthage~~

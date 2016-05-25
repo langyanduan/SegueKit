@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onBtnB(sender: AnyObject) {
-        performSegue(with: R.segue.viewController.b) { (segue, source, destination) in
-            destination.view.backgroundColor = UIColor.greenColor()
+        performSegue(with: R.segue.viewController.b) { (segue) in
+            segue.destinationViewController.view.backgroundColor = UIColor.greenColor()
         }
     }
     
@@ -47,6 +47,22 @@ class ViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
+    @IBAction func onBtnVC(sender: AnyObject) {
+        rx_performSegue(R.segue.viewController.viewController)
+            .subscribeNext { [unowned self] (segue) in
+                for view in segue.destinationViewController.view.subviews {
+                    if let button = view as? UIButton {
+                        button.rx_tap
+                            .bindTo(segue.destinationViewController.rx_segue(R.segue.uIViewController.viewController)) { (segue, _) in
+                                segue.destinationViewController.view.backgroundColor = UIColor.redColor()
+                            }
+                            .addDisposableTo(self.disposeBag)
+                        break
+                    }
+                }
+            }
+            .addDisposableTo(disposeBag)
+    }
     
     deinit {
         print("deinit ViewController")
@@ -99,8 +115,8 @@ class B: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button.rx_tap.bindTo(rx_segue(R.segue.b.b))  { (segue, source, destination, _) in
-            destination.view.backgroundColor = UIColor.brownColor()
+        button.rx_tap.bindTo(rx_segue(R.segue.b.b))  { (segue, _) in
+            segue.destinationViewController.view.backgroundColor = UIColor.brownColor()
         }.addDisposableTo(disposeBag)
     }
 

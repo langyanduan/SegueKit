@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DsU-Gr-rt6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DsU-Gr-rt6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,38 +18,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zt-hb-Ol4">
-                                <rect key="frame" x="38" y="105" width="46" height="30"/>
+                                <rect key="frame" x="69" y="111" width="46" height="30"/>
                                 <state key="normal" title="A"/>
                                 <connections>
                                     <action selector="onBtnA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Pd-fm-k0h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaW-n5-fcd">
-                                <rect key="frame" x="38" y="161" width="46" height="30"/>
+                                <rect key="frame" x="69" y="167" width="46" height="30"/>
                                 <state key="normal" title="B"/>
                                 <connections>
                                     <action selector="onBtnB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v9X-ks-Y5T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWx-Vs-T44">
-                                <rect key="frame" x="38" y="219" width="46" height="30"/>
+                                <rect key="frame" x="69" y="225" width="46" height="30"/>
                                 <state key="normal" title="C"/>
                                 <connections>
                                     <action selector="onBtnC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XVw-g0-BZd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3X-bk-aNG">
-                                <rect key="frame" x="38" y="277" width="46" height="30"/>
+                                <rect key="frame" x="69" y="283" width="46" height="30"/>
                                 <state key="normal" title="D"/>
                                 <connections>
                                     <action selector="onBtnD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0q-dK-vMp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-RI-NSf">
-                                <rect key="frame" x="43" y="341" width="37" height="30"/>
+                                <rect key="frame" x="74" y="347" width="37" height="30"/>
                                 <state key="normal" title="Basic"/>
                                 <connections>
                                     <segue destination="D28-3n-5l1" kind="show" id="Gxd-XB-4QM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq6-aO-W8s">
+                                <rect key="frame" x="24" y="477" width="137" height="30"/>
+                                <state key="normal" title="UIViewController"/>
+                                <connections>
+                                    <action selector="onBtnVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HSW-gz-x3h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,6 +68,7 @@
                         <segue destination="xkv-v5-qcm" kind="show" identifier="B" id="Q1I-p9-g3d"/>
                         <segue destination="Ke7-Hw-ctZ" kind="show" identifier="C" id="1hh-5U-uJ9"/>
                         <segue destination="YcL-tY-qAB" kind="show" identifier="D" id="f1m-2Y-GPS"/>
+                        <segue destination="dGd-HE-vPf" kind="show" identifier="ViewController" id="Uea-Kg-Yz2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -317,6 +325,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v07-Yc-gr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="651" y="1127"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QUq-Sl-W6O">
+            <objects>
+                <viewController id="dGd-HE-vPf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oLK-ao-EwH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Key-kw-Rh4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AlM-CA-qoE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w22-AI-WTo">
+                                <rect key="frame" x="137" y="225" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="C6c-5k-KhJ" kind="show" identifier="ViewController" id="N2k-ya-hk7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="az0-IW-VMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="1946"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DHh-Xx-jI3">
+            <objects>
+                <viewController id="C6c-5k-KhJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CcK-yL-Pja"/>
+                        <viewControllerLayoutGuide type="bottom" id="rOA-xz-Y0A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="POW-B6-SKy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYK-NK-aj0">
+                                <rect key="frame" x="139" y="229" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grU-dy-odu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="2597"/>
         </scene>
     </scenes>
 </document>

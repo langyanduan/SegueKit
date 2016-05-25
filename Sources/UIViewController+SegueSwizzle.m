@@ -32,6 +32,7 @@
         Class currentClass = self;
         
         if (class_getInstanceMethod(self, originalSelector) != class_getInstanceMethod(class_getSuperclass(self), originalSelector)) {
+            // if current implement prepareForSegue, just swizzle it.
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
             SEL swizzledSelector = @selector(swz_prepareForSegue:sender:);
@@ -48,6 +49,7 @@
             Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
             method_exchangeImplementations(originalMethod, swizzledMethod);
         } else {
+            // if current class has not implement prepareForSegue, add one.
             IMP imp = imp_implementationWithBlock(^(id object, UIStoryboardSegue *segue, id sender) {
                 assert([object isKindOfClass:[UIViewController class]] && ![object isMemberOfClass:[UIViewController class]]);
                 aopCall(object, aopSelector, segue, currentClass);
