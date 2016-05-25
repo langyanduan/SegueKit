@@ -81,7 +81,7 @@ class A: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button.rx_tap.bindTo(rx_segue("A"))  { (segue) in
+        button.rx_tap.bindTo(rx_segue("A"))  { (segue, _) in
             segue.destinationViewController.view.backgroundColor = UIColor.blackColor()
         }.addDisposableTo(disposeBag)
     }
@@ -99,7 +99,7 @@ class B: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button.rx_tap.bindTo(rx_segue(R.segue.b.b))  { (segue, source, destination) in
+        button.rx_tap.bindTo(rx_segue(R.segue.b.b))  { (segue, source, destination, _) in
             destination.view.backgroundColor = UIColor.brownColor()
         }.addDisposableTo(disposeBag)
     }
