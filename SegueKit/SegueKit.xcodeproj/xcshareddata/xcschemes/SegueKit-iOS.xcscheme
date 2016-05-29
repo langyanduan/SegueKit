@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50DB4C361CFB3E420092D872"
                BuildableName = "SegueKit.framework"
-               BlueprintName = "SegueKit iOS"
+               BlueprintName = "SegueKit-iOS"
                ReferencedContainer = "container:SegueKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50DB4C361CFB3E420092D872"
             BuildableName = "SegueKit.framework"
-            BlueprintName = "SegueKit iOS"
+            BlueprintName = "SegueKit-iOS"
             ReferencedContainer = "container:SegueKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50DB4C361CFB3E420092D872"
             BuildableName = "SegueKit.framework"
-            BlueprintName = "SegueKit iOS"
+            BlueprintName = "SegueKit-iOS"
             ReferencedContainer = "container:SegueKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

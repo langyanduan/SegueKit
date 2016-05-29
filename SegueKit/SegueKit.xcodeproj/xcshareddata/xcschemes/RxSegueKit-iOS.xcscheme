@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50DB4C601CFB3F880092D872"
-               BuildableName = "RxSegueKit iOS.framework"
-               BlueprintName = "RxSegueKit iOS"
+               BuildableName = "RxSegueKit.framework"
+               BlueprintName = "RxSegueKit-iOS"
                ReferencedContainer = "container:SegueKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50DB4C601CFB3F880092D872"
-            BuildableName = "RxSegueKit iOS.framework"
-            BlueprintName = "RxSegueKit iOS"
+            BuildableName = "RxSegueKit.framework"
+            BlueprintName = "RxSegueKit-iOS"
             ReferencedContainer = "container:SegueKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50DB4C601CFB3F880092D872"
-            BuildableName = "RxSegueKit iOS.framework"
-            BlueprintName = "RxSegueKit iOS"
+            BuildableName = "RxSegueKit.framework"
+            BlueprintName = "RxSegueKit-iOS"
             ReferencedContainer = "container:SegueKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
