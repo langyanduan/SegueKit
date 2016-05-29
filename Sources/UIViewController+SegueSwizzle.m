@@ -20,7 +20,7 @@
         objc_setAssociatedObject(self, kSwizzledFlag, @(true), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
 #if DEBUG
-        NSLog(@"swizzle class: %@", NSStringFromClass(self));
+        NSLog(@"swizzle prepareForSegue: %@", NSStringFromClass(self));
 #endif
         
         SEL originalSelector = @selector(prepareForSegue:sender:);
@@ -46,8 +46,13 @@
                 assert([object isKindOfClass:[UIViewController class]]);
                 aopCall(object, aopSelector, segue, sender, currentClass);
                 
-                void (*selfCall)(id, SEL, UIStoryboardSegue *, id) = (__typeof(selfCall))objc_msgSend;
-                selfCall(object, swizzledSelector, segue, sender);
+                // objc_msgSend 可能会将消息转发到子类的实现中, 这里用 method_invoke 直接将消息发到当前类
+                void (*selfCall)(id, Method, UIStoryboardSegue *, id) = (__typeof(selfCall))method_invoke;
+                Method swizzledMethod = class_getInstanceMethod(currentClass, swizzledSelector);
+                selfCall(object, swizzledMethod, segue, sender);
+                
+//                void (*selfCall)(id, SEL, UIStoryboardSegue *, id) = (__typeof(selfCall))objc_msgSend;
+//                selfCall(object, swizzledSelector, segue, sender);
             });
             class_addMethod(self, swizzledSelector, imp, typeEncoding);
             Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);

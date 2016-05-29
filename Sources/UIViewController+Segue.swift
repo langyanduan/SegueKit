@@ -69,12 +69,9 @@ extension UIViewController {
         objc_setAssociatedObject(self, &kSegueObjectKey, obj, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return obj
     }
-
     
     @objc dynamic
     func aop_prepare(for segue: UIStoryboardSegue, sender: AnyObject?, and type: AnyObject.Type) {
-        print("prepare segue for: \(type)")
-        
         guard let identifier = segue.identifier else {
             return
         }
