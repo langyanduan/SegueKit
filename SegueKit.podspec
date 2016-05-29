@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'SegueKit'
-  spec.version          = '0.1.3'
+  spec.version          = '0.1.4'
   spec.summary          = 'Perform storyboard segues with closures, support RxSwift and R.swift.'
   
   spec.description      = <<-DESC
@@ -32,19 +32,37 @@ Pod::Spec.new do |spec|
   # Subspecs
   spec.subspec 'Core' do |core|
     core.source_files = [
-      'Sources/UIViewController+SegueSwizzle.h',
-      'Sources/UIViewController+SegueSwizzle.m',
+      'Sources/UIViewController+Swizzle.h',
+      'Sources/UIViewController+Swizzle.m',
       'Sources/UIViewController+Segue.swift'
     ]
   end
   
-  spec.subspec 'Extension' do |extension|
+  spec.subspec 'R.swift' do |extension|
     extension.source_files = [
-      'Sources/UIViewController+SegueExt.swift'
+      'Sources/UIViewController+R.swift.swift'
     ]
     extension.dependency 'SegueKit/Core'
     extension.dependency 'R.swift'
+  end
+  
+  spec.subspec 'RxSwift' do |extension|
+    extension.source_files = [
+      'Sources/UIViewController+RxSwift.swift'
+    ]
+    extension.dependency 'SegueKit/Core'
     extension.dependency 'RxSwift'
+  end
+  
+  spec.subspec 'Extension' do |extension|
+    extension.source_files = [
+      'Sources/UIViewController+Extension.swift'
+    ]
+    extension.dependency 'R.swift'
+    extension.dependency 'RxSwift'
+    extension.dependency 'SegueKit/Core'
+    extension.dependency 'SegueKit/RxSwift'
+    extension.dependency 'SegueKit/R.swift'
   end
   
 end

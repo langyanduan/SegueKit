@@ -1,5 +1,5 @@
 //
-//  UIViewController+SegueSwizzle.m
+//  UIViewController+Swizzle.m
 //  SegueKit
 //
 //  Created by langyanduan on 16/5/24.
@@ -7,12 +7,11 @@
 //
 
 #import <objc/message.h>
-#import "UIViewController+SegueSwizzle.h"
-//#import "SegueKit-Swift.h"
+#import "UIViewController+Swizzle.h"
 
-@implementation UIViewController (SegueSwizzle)
+@implementation UIViewController (Swizzle)
 
-+ (void)swz_swizzleIfNeeded {
++ (void)swz_swizzleSegueIfNeeded {
     assert([NSThread isMainThread]);
     
     static const void *kSwizzledFlag = &kSwizzledFlag;
@@ -75,8 +74,8 @@
     }
 }
 
-- (void)swz_swizzleIfNeeded {
-    [[self class] swz_swizzleIfNeeded];
+- (void)swz_swizzleSegueIfNeeded {
+    [[self class] swz_swizzleSegueIfNeeded];
 }
 
 @end

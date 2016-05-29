@@ -152,15 +152,29 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 SegueKit is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
-pod "SegueKit"
-```
+* Basic Functions
 
-if you want use the feature for RxSwift and R.swfit, add the following line to your Podfile:
+    ```ruby
+    pod "SegueKit"
+    ```
 
-```ruby
-pod "SegueKit/Extension"
-```
+* RxSwift
+
+    ```ruby
+    pod "SegueKit/RxSwift"
+    ```
+
+* RxSwift
+
+    ```ruby
+    pod "SegueKit/R.swift"
+    ```
+
+* RxSwift + R.swift
+
+    ```ruby
+    pod "SegueKit/Extension"
+    ```
 
 ### ~~Carthage~~
 

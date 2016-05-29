@@ -9,6 +9,9 @@ target 'SegueKit_Example' do
     pod 'RxOptional'
     pod 'RxDataSources'
     pod 'R.swift'
+    #pod 'SegueKit', :path => '../'
+    #pod 'SegueKit/R.swift', :path => '../'
+    #pod 'SegueKit/RxSwift', :path => '../'
     pod 'SegueKit/Extension', :path => '../'
 end
 

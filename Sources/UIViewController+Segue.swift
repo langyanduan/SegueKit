@@ -90,7 +90,7 @@ extension UIViewController {
 
 public extension UIViewController {
     public func performSegue(with identifier: String, handler: UIStoryboardSegue -> Void) {
-        swz_swizzleIfNeeded()
+        swz_swizzleSegueIfNeeded()
         let handlerWrapper: (UIStoryboardSegue, AnyObject?) -> Void = { (segue, sender) in
             handler(segue)
         }

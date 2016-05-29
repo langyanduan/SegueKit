@@ -64,6 +64,10 @@ class ViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+    }
+    
     deinit {
         print("deinit ViewController")
     }
@@ -105,6 +109,10 @@ class A: BaseViewController {
     deinit {
         print("deinit A")
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+    }
 }
 
 class B: BaseViewController {
@@ -119,7 +127,6 @@ class B: BaseViewController {
             segue.destinationViewController.view.backgroundColor = UIColor.brownColor()
         }.addDisposableTo(disposeBag)
     }
-
     
     deinit {
         print("deinit B")

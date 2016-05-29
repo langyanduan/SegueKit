@@ -1,5 +1,5 @@
 //
-//  UIViewController+SegueSwizzle.h
+//  UIViewController+Swizzle.h
 //  SegueKit
 //
 //  Created by langyanduan on 16/5/24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (SegueSwizzle)
-- (void)swz_swizzleIfNeeded;
+@interface UIViewController (Swizzle)
+- (void)swz_swizzleSegueIfNeeded;
 @end
