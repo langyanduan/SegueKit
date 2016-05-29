@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SegueKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -78,7 +78,7 @@
         <!--D-->
         <scene sceneID="ssj-3I-vBH">
             <objects>
-                <viewController id="YcL-tY-qAB" customClass="D" customModule="SegueKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YcL-tY-qAB" customClass="D" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jnh-lb-6l7"/>
                         <viewControllerLayoutGuide type="bottom" id="mjx-MW-rgF"/>
@@ -124,7 +124,7 @@
         <!--A-->
         <scene sceneID="rnF-BS-tdS">
             <objects>
-                <viewController id="sD1-QP-N5m" customClass="A" customModule="SegueKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sD1-QP-N5m" customClass="A" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4UQ-2Z-yNK"/>
                         <viewControllerLayoutGuide type="bottom" id="Cmp-Gr-O7m"/>
@@ -189,7 +189,7 @@
         <!--Base View Controller-->
         <scene sceneID="pi3-VU-Zx6">
             <objects>
-                <viewController id="D28-3n-5l1" customClass="BaseViewController" customModule="SegueKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D28-3n-5l1" customClass="BaseViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HKM-aj-eAh"/>
                         <viewControllerLayoutGuide type="bottom" id="1pe-kO-xhf"/>
@@ -217,7 +217,7 @@
         <!--B-->
         <scene sceneID="Lf3-6o-6vw">
             <objects>
-                <viewController id="xkv-v5-qcm" customClass="B" customModule="SegueKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xkv-v5-qcm" customClass="B" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xWd-V7-xBt"/>
                         <viewControllerLayoutGuide type="bottom" id="e40-Om-ABg"/>
@@ -282,7 +282,7 @@
         <!--C-->
         <scene sceneID="1Nz-Vu-Y3x">
             <objects>
-                <viewController id="Ke7-Hw-ctZ" customClass="C" customModule="SegueKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ke7-Hw-ctZ" customClass="C" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="baD-Wm-j64"/>
                         <viewControllerLayoutGuide type="bottom" id="peT-24-tKZ"/>

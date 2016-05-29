@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31CC61144873377463115AFC /* Pods_SegueKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383C2CC6436A60F497D2198E /* Pods_SegueKit_Tests.framework */; };
+		31CC61144873377463115AFC /* Pods_Example_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383C2CC6436A60F497D2198E /* Pods_Example_Tests.framework */; };
 		50793BCB1CF553B800754CF9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50793BCA1CF553B800754CF9 /* R.generated.swift */; };
+		50DB4B221CFB30360092D872 /* SegueKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 50DB4B211CFB30360092D872 /* SegueKit.podspec */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		ADCEE72689C56DA50509627E /* Pods_SegueKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9FF41DA5F776AEB2C1D986 /* Pods_SegueKit_Example.framework */; };
+		ADCEE72689C56DA50509627E /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9FF41DA5F776AEB2C1D986 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,31 +25,31 @@
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = SegueKit;
+			remoteInfo = Example;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1052254F4726ACB139D3E545 /* Pods-SegueKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegueKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SegueKit_Example/Pods-SegueKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1052254F4726ACB139D3E545 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		1078ED980DBFB857C3AC49D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		383C2CC6436A60F497D2198E /* Pods_SegueKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SegueKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		383C2CC6436A60F497D2198E /* Pods_Example_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50793BCA1CF553B800754CF9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		607FACD01AFB9204008FA782 /* SegueKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SegueKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DB4B211CFB30360092D872 /* SegueKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SegueKit.podspec; path = ../SegueKit.podspec; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* SegueKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SegueKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* Example_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Example_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7487BC57F93FD6F0D7CC3C1B /* SegueKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SegueKit.podspec; path = ../SegueKit.podspec; sourceTree = "<group>"; };
-		7E9FF41DA5F776AEB2C1D986 /* Pods_SegueKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SegueKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		930A9211C69F718B77454221 /* Pods-SegueKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegueKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SegueKit_Example/Pods-SegueKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B74B5E358E603F92406A0A40 /* Pods-SegueKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegueKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SegueKit_Tests/Pods-SegueKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		7E9FF41DA5F776AEB2C1D986 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		930A9211C69F718B77454221 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B74B5E358E603F92406A0A40 /* Pods-Example_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example_Tests/Pods-Example_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F53CFC7620E5B3487200F035 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F80C1C4AB32F831015274BB1 /* Pods-SegueKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegueKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SegueKit_Tests/Pods-SegueKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F80C1C4AB32F831015274BB1 /* Pods-Example_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example_Tests/Pods-Example_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADCEE72689C56DA50509627E /* Pods_SegueKit_Example.framework in Frameworks */,
+				ADCEE72689C56DA50509627E /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31CC61144873377463115AFC /* Pods_SegueKit_Tests.framework in Frameworks */,
+				31CC61144873377463115AFC /* Pods_Example_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for SegueKit */,
+				607FACD21AFB9204008FA782 /* Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				899BF146423348928CBE1B07 /* Pods */,
@@ -86,13 +87,13 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* SegueKit_Example.app */,
-				607FACE51AFB9204008FA782 /* SegueKit_Tests.xctest */,
+				607FACD01AFB9204008FA782 /* Example.app */,
+				607FACE51AFB9204008FA782 /* Example_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for SegueKit */ = {
+		607FACD21AFB9204008FA782 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -103,8 +104,7 @@
 				50793BCA1CF553B800754CF9 /* R.generated.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for SegueKit";
-			path = SegueKit;
+			path = Example;
 			sourceTree = "<group>";
 		};
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
@@ -135,7 +135,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				7487BC57F93FD6F0D7CC3C1B /* SegueKit.podspec */,
+				50DB4B211CFB30360092D872 /* SegueKit.podspec */,
 				F53CFC7620E5B3487200F035 /* README.md */,
 				1078ED980DBFB857C3AC49D2 /* LICENSE */,
 			);
@@ -145,8 +145,8 @@
 		6C9F0047DE02C915C6B80F70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E9FF41DA5F776AEB2C1D986 /* Pods_SegueKit_Example.framework */,
-				383C2CC6436A60F497D2198E /* Pods_SegueKit_Tests.framework */,
+				7E9FF41DA5F776AEB2C1D986 /* Pods_Example.framework */,
+				383C2CC6436A60F497D2198E /* Pods_Example_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,10 +154,10 @@
 		899BF146423348928CBE1B07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				930A9211C69F718B77454221 /* Pods-SegueKit_Example.debug.xcconfig */,
-				1052254F4726ACB139D3E545 /* Pods-SegueKit_Example.release.xcconfig */,
-				F80C1C4AB32F831015274BB1 /* Pods-SegueKit_Tests.debug.xcconfig */,
-				B74B5E358E603F92406A0A40 /* Pods-SegueKit_Tests.release.xcconfig */,
+				930A9211C69F718B77454221 /* Pods-Example.debug.xcconfig */,
+				1052254F4726ACB139D3E545 /* Pods-Example.release.xcconfig */,
+				F80C1C4AB32F831015274BB1 /* Pods-Example_Tests.debug.xcconfig */,
+				B74B5E358E603F92406A0A40 /* Pods-Example_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -165,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* SegueKit_Example */ = {
+		607FACCF1AFB9204008FA782 /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SegueKit_Example" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				A601CE21DC05E5B896AD34FD /* 📦 Check Pods Manifest.lock */,
 				50793BC91CF5516400754CF9 /* ShellScript */,
@@ -181,14 +181,14 @@
 			);
 			dependencies = (
 			);
-			name = SegueKit_Example;
-			productName = SegueKit;
-			productReference = 607FACD01AFB9204008FA782 /* SegueKit_Example.app */;
+			name = Example;
+			productName = Example;
+			productReference = 607FACD01AFB9204008FA782 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* SegueKit_Tests */ = {
+		607FACE41AFB9204008FA782 /* Example_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SegueKit_Tests" */;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example_Tests" */;
 			buildPhases = (
 				4FE4D60FB0F99CD413065D27 /* 📦 Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
@@ -202,9 +202,9 @@
 			dependencies = (
 				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
 			);
-			name = SegueKit_Tests;
+			name = Example_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* SegueKit_Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* Example_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -226,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "SegueKit" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -239,8 +239,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* SegueKit_Example */,
-				607FACE41AFB9204008FA782 /* SegueKit_Tests */,
+				607FACCF1AFB9204008FA782 /* Example */,
+				607FACE41AFB9204008FA782 /* Example_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -251,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				50DB4B221CFB30360092D872 /* SegueKit.podspec in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -278,7 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SegueKit_Example/Pods-SegueKit_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3462B594198F1B3D527FF5B5 /* 📦 Embed Pods Frameworks */ = {
@@ -293,7 +294,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SegueKit_Example/Pods-SegueKit_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4FE4D60FB0F99CD413065D27 /* 📦 Check Pods Manifest.lock */ = {
@@ -336,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SegueKit_Tests/Pods-SegueKit_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example_Tests/Pods-Example_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A601CE21DC05E5B896AD34FD /* 📦 Check Pods Manifest.lock */ = {
@@ -366,7 +367,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SegueKit_Tests/Pods-SegueKit_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example_Tests/Pods-Example_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -395,7 +396,7 @@
 /* Begin PBXTargetDependency section */
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* SegueKit_Example */;
+			target = 607FACCF1AFB9204008FA782 /* Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -504,10 +505,10 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 930A9211C69F718B77454221 /* Pods-SegueKit_Example.debug.xcconfig */;
+			baseConfigurationReference = 930A9211C69F718B77454221 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SegueKit/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -517,10 +518,10 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1052254F4726ACB139D3E545 /* Pods-SegueKit_Example.release.xcconfig */;
+			baseConfigurationReference = 1052254F4726ACB139D3E545 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SegueKit/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -530,7 +531,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F80C1C4AB32F831015274BB1 /* Pods-SegueKit_Tests.debug.xcconfig */;
+			baseConfigurationReference = F80C1C4AB32F831015274BB1 /* Pods-Example_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -549,7 +550,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B74B5E358E603F92406A0A40 /* Pods-SegueKit_Tests.release.xcconfig */;
+			baseConfigurationReference = B74B5E358E603F92406A0A40 /* Pods-Example_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -565,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "SegueKit" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
@@ -574,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SegueKit_Example" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
@@ -583,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SegueKit_Tests" */ = {
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,

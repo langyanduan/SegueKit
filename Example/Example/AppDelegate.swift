@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  SegueKit
+//  Example
 //
 //  Created by langyanduan on 16/5/24.
 //  Copyright © 2016年 langyanduan. All rights reserved.

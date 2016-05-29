@@ -3,7 +3,7 @@ platform :ios, '8.0'
 use_frameworks!
 inhibit_all_warnings!
 
-target 'SegueKit_Example' do
+target 'Example' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxOptional'
@@ -15,6 +15,6 @@ target 'SegueKit_Example' do
     pod 'SegueKit/Extension', :path => '../'
 end
 
-target 'SegueKit_Tests' do
+target 'Example_Tests' do
     
 end
