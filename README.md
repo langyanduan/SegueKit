@@ -28,12 +28,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 import SegueKit
 
 class ViewController: UIViewController {
-    
     let disposeBag = DisposeBag()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     // basic
     @IBAction func onBtnA(sender: AnyObject) {
@@ -41,7 +36,22 @@ class ViewController: UIViewController {
             segue.destinationViewController.view.backgroundColor = UIColor.yellowColor()
         }
     }
-    
+}
+```
+
+## Extension Usage
+
+* work with R.swift
+* work with RxSwift
+
+### Perform a segue with Extension
+
+```swift
+import SegueKit
+
+class ViewController: UIViewController {
+    let disposeBag = DisposeBag()
+
     // with R.swift
     @IBAction func onBtnB(sender: AnyObject) {
         performSegue(with: R.segue.viewController.b) { (segue) in
@@ -82,7 +92,7 @@ class A: UIViewController {
         super.viewDidLoad()
         
         // with Rx
-        button.rx_tap.bindTo(rx_segue("A")) { (segue) in
+        button.rx_tap.bindTo(rx_segue("A")) { (segue, _) in
             segue.destinationViewController.view.backgroundColor = UIColor.blackColor()
         }.addDisposableTo(disposeBag)
     }
@@ -118,7 +128,7 @@ class C: UIViewController {
         super.viewDidLoad()
         
         // with Rx
-        rx_segue("C").subscribeNext { (segue) in
+        rx_segue("C").subscribeNext { (segue, sender) in
             segue.destinationViewController.view.backgroundColor = UIColor.purpleColor()
         }.addDisposableTo(disposeBag)
     }
@@ -131,7 +141,7 @@ class D: UIViewController {
         super.viewDidLoad()
         
         // with Rx + R.swift
-        rx_segue(R.segue.d.d).subscribeNext { (segue) in
+        rx_segue(R.segue.d.d).subscribeNext { (segue, sender) in
             segue.destinationViewController.view.backgroundColor = UIColor.orangeColor()
         }.addDisposableTo(disposeBag)
     }
