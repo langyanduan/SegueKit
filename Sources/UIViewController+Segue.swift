@@ -12,10 +12,10 @@ class SegueObject {
     class Context {
         let identifier: String
         let type: AnyObject.Type
-        let handler: UIStoryboardSegue -> Void
+        let handler: (UIStoryboardSegue, AnyObject?) -> Void
         let removeOnComplete: Bool
         
-        init(identifier: String, type: AnyObject.Type, handler: UIStoryboardSegue -> Void, removeOnComplete: Bool) {
+        init(identifier: String, type: AnyObject.Type, handler: (UIStoryboardSegue, AnyObject?) -> Void, removeOnComplete: Bool) {
             self.identifier = identifier
             self.type = type
             self.handler = handler
@@ -25,7 +25,7 @@ class SegueObject {
     
     var contexts: [Context] = []
     
-    func save(identifier: String, type: AnyObject.Type, handler: UIStoryboardSegue -> Void, removeOnComplete: Bool) -> Context {
+    func save(identifier: String, type: AnyObject.Type, handler: (UIStoryboardSegue, AnyObject?) -> Void, removeOnComplete: Bool) -> Context {
         let context = Context(identifier: identifier, type: type, handler: handler, removeOnComplete: removeOnComplete)
         contexts.append(context)
         return context
@@ -72,15 +72,15 @@ extension UIViewController {
 
     
     @objc dynamic
-    func aop_prepare(for segue: UIStoryboardSegue, and type: AnyObject.Type) {
-//        print("prepare segue for: \(type)")
+    func aop_prepare(for segue: UIStoryboardSegue, sender: AnyObject?, and type: AnyObject.Type) {
+        print("prepare segue for: \(type)")
         
         guard let identifier = segue.identifier else {
             return
         }
         let list = aop_context.query(identifier, type: type)
         for context in list {
-            context.handler(segue)
+            context.handler(segue, sender)
             
             if context.removeOnComplete {
                 aop_context.removeContext(context)
@@ -94,7 +94,10 @@ extension UIViewController {
 public extension UIViewController {
     public func performSegue(with identifier: String, handler: UIStoryboardSegue -> Void) {
         swz_swizzleIfNeeded()
-        aop_context.save(identifier, type: self.dynamicType, handler: handler, removeOnComplete: true)
+        let handlerWrapper: (UIStoryboardSegue, AnyObject?) -> Void = { (segue, sender) in
+            handler(segue)
+        }
+        aop_context.save(identifier, type: self.dynamicType, handler: handlerWrapper, removeOnComplete: true)
         performSegueWithIdentifier(identifier, sender: nil)
     }
 }

@@ -47,7 +47,7 @@ public extension UIViewController {
         }
     }
 
-    public func rx_segue(identifier: String) -> Observable<UIStoryboardSegue> {
+    public func rx_segue(identifier: String) -> Observable<(UIStoryboardSegue, AnyObject?)> {
         return Observable.create({ [weak self] (observer) -> Disposable in
             MainScheduler.ensureExecutingOnScheduler()
             guard let `self` = self else {
@@ -55,8 +55,8 @@ public extension UIViewController {
             }
             
             self.swz_swizzleIfNeeded()
-            let handler = { (segue: UIStoryboardSegue) in
-                observer.onNext(segue)
+            let handler = { (segue: UIStoryboardSegue, sender: AnyObject?) in
+                observer.onNext((segue, sender))
             }
             let context = self.aop_context.save(identifier, type: self.dynamicType, handler: handler, removeOnComplete: false)
             return AnonymousDisposable { [weak self] in
@@ -93,7 +93,7 @@ public extension UIViewController {
 
 public protocol RxSeguePerformerProtocol {
     func rx_performSegue(identifier: String) -> Observable<UIStoryboardSegue>
-    func rx_segue(identifier: String) -> Observable<UIStoryboardSegue>
+    func rx_segue(identifier: String) -> Observable<(UIStoryboardSegue, AnyObject?)>
     func rx_segue<O: ObservableType>(identifier: String)
         -> (source: O)
         -> (handler: (UIStoryboardSegue, O.E) -> Void)
@@ -110,8 +110,8 @@ public extension RxSeguePerformerProtocol where Self: UIViewController {
     }
     
     public func rx_segue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
-        -> Observable<TypedStoryboardSegueInfo<Segue, Self, Destination>> {
-        return rx_segue(identifier.identifier).map { TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0)! }
+        -> Observable<(TypedStoryboardSegueInfo<Segue, Self, Destination>, AnyObject?)> {
+        return rx_segue(identifier.identifier).map { (TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0.0)!, $0.1) }
     }
 
     public func rx_segue<Segue, Destination, O: ObservableType>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)

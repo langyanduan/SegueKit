@@ -19,15 +19,19 @@
     if (objc_getAssociatedObject(self, kSwizzledFlag) == nil) {
         objc_setAssociatedObject(self, kSwizzledFlag, @(true), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
+#if DEBUG
+        NSLog(@"swizzle class: %@", NSStringFromClass(self));
+#endif
+        
         SEL originalSelector = @selector(prepareForSegue:sender:);
         Method originalMethod = class_getInstanceMethod(self, originalSelector);
         const char *typeEncoding = method_getTypeEncoding(originalMethod);
         
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-        SEL aopSelector = @selector(aop_prepareFor:and:);   // import from swift
+        SEL aopSelector = @selector(aop_prepareFor:sender:and:);   // import from swift
 #pragma clang diagnostic pop
-        void (*aopCall)(id, SEL, UIStoryboardSegue *, Class) = (__typeof(aopCall))objc_msgSend;
+        void (*aopCall)(id, SEL, UIStoryboardSegue *, id, Class) = (__typeof(aopCall))objc_msgSend;
         
         Class currentClass = self;
         
@@ -40,7 +44,7 @@
             
             IMP imp = imp_implementationWithBlock(^(id object, UIStoryboardSegue *segue, id sender) {
                 assert([object isKindOfClass:[UIViewController class]]);
-                aopCall(object, aopSelector, segue, currentClass);
+                aopCall(object, aopSelector, segue, sender, currentClass);
                 
                 void (*selfCall)(id, SEL, UIStoryboardSegue *, id) = (__typeof(selfCall))objc_msgSend;
                 selfCall(object, swizzledSelector, segue, sender);
@@ -52,7 +56,7 @@
             // if current class has not implement prepareForSegue, add one.
             IMP imp = imp_implementationWithBlock(^(id object, UIStoryboardSegue *segue, id sender) {
                 assert([object isKindOfClass:[UIViewController class]] && ![object isMemberOfClass:[UIViewController class]]);
-                aopCall(object, aopSelector, segue, currentClass);
+                aopCall(object, aopSelector, segue, sender, currentClass);
                 
                 void (*superCall)(struct objc_super *, SEL, UIStoryboardSegue *, id) = (__typeof(superCall))objc_msgSendSuper;
                 struct objc_super superInfo = {

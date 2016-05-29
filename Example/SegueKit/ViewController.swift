@@ -75,7 +75,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         rx_segue(R.segue.baseViewController.base)
-            .subscribeNext { (segue) in
+            .subscribeNext { (segue, sender) in
                 segue.destinationViewController.view.backgroundColor = UIColor.cyanColor()
             }
             .addDisposableTo(baseDisposeBag)
@@ -132,7 +132,7 @@ class C: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rx_segue("C").subscribeNext { (segue) in
+        rx_segue("C").subscribeNext { (segue, sender) in
             segue.destinationViewController.view.backgroundColor = UIColor.purpleColor()
         }.addDisposableTo(disposeBag)
     }
@@ -148,7 +148,7 @@ class D: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rx_segue(R.segue.d.d).subscribeNext { (segue) in
+        rx_segue(R.segue.d.d).subscribeNext { (segue, sender) in
             segue.destinationViewController.view.backgroundColor = UIColor.orangeColor()
         }.addDisposableTo(disposeBag)
     }
