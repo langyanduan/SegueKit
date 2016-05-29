@@ -9,20 +9,11 @@ Perform storyboard segues with closures.
 
 ## Why use this?
 
-balabala...
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+If you want to pass some parameters to destination view controller which created by segue in storyboard, usual should override `prepareForSegue:sender:`. But if work with `SegueKit`, you can do it in closure.
 
 ## Usage
 
-* basic
-* with R.swfit
-* with Rx
-* with Rx + R.swift
-
-### Perform a segue
+If you create a segue in storyboard named "A", you can perfrom the segue like this: 
 
 ```swift
 import SegueKit
@@ -41,8 +32,9 @@ class ViewController: UIViewController {
 
 ## Extension Usage
 
-* work with R.swift
-* work with RxSwift
+* with R.swfit
+* with Rx
+* with Rx + R.swift
 
 ### Perform a segue with Extension
 
@@ -148,6 +140,10 @@ class D: UIViewController {
 }
 
 ```
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Install
 
