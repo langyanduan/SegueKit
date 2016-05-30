@@ -176,8 +176,15 @@ it, simply add the following line to your Podfile:
     pod "SegueKit/Extension"
     ```
 
-### ~~Carthage~~
+### Carthage
 
+Because `R.swift` unsupport carthage, so `SegueKit` can only work with `RxSwift` if you install by `crathage`.
+
+Carthage users can point to this repository and use whichever generated framework they'd like, `SegueKit` or `RxSegueKit`. The `SegueKit` framework is bundled in each of those frameworks; importing more than one framework in a single file will result in ambiguous lookups at compile time.
+
+```
+github "langyanduan/SegueKit"
+```
 
 ## License
 
