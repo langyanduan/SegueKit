@@ -2,7 +2,7 @@
 //  SegueKit.h
 //  SegueKit
 //
-//  Created by WuFan on 16/5/29.
+//  Created by langyanduan on 16/5/29.
 //  Copyright © 2016年 seguekit. All rights reserved.
 //
 

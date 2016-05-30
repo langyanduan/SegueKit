@@ -2,8 +2,8 @@
 //  RxSegueKit.h
 //  RxSegueKit
 //
-//  Created by WuFan on 16/5/29.
-//  Copyright © 2016年 RxSegueKit. All rights reserved.
+//  Created by langyanduan on 16/5/29.
+//  Copyright © 2016年 seguekit. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
