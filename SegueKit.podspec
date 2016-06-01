@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'SegueKit'
-  spec.version          = '0.2.0'
+  spec.version          = '0.2.1'
   spec.summary          = 'Perform storyboard segues with closures, support RxSwift and R.swift.'
   
   spec.description      = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
 
   spec.homepage         = 'https://github.com/langyanduan/SegueKit'
   spec.license          = { :type => 'MIT', :file => 'LICENSE' }
-  spec.author           = { 'langyanduan' => 'langyanduan@qq.com' }
+  spec.author           = { 'langyanduan' => 'langyanduan@gmail.com' }
   spec.source           = { :git => 'https://github.com/langyanduan/SegueKit.git', :tag => spec.version.to_s }
   spec.social_media_url = 'https://twitter.com/langyanduan'
 

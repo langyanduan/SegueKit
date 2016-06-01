@@ -18,10 +18,6 @@
     if (objc_getAssociatedObject(self, kSwizzledFlag) == nil) {
         objc_setAssociatedObject(self, kSwizzledFlag, @(true), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
-#if DEBUG
-        NSLog(@"swizzle prepareForSegue: %@", NSStringFromClass(self));
-#endif
-        
         SEL originalSelector = @selector(prepareForSegue:sender:);
         Method originalMethod = class_getInstanceMethod(self, originalSelector);
         const char *typeEncoding = method_getTypeEncoding(originalMethod);
@@ -49,9 +45,6 @@
                 void (*selfCall)(id, Method, UIStoryboardSegue *, id) = (__typeof(selfCall))method_invoke;
                 Method swizzledMethod = class_getInstanceMethod(currentClass, swizzledSelector);
                 selfCall(object, swizzledMethod, segue, sender);
-                
-//                void (*selfCall)(id, SEL, UIStoryboardSegue *, id) = (__typeof(selfCall))objc_msgSend;
-//                selfCall(object, swizzledSelector, segue, sender);
             });
             class_addMethod(self, swizzledSelector, imp, typeEncoding);
             Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
