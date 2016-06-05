@@ -25,16 +25,19 @@ extension UIViewController: RxSeguePerformerProtocol { }
 
 public extension RxSeguePerformerProtocol where Self: UIViewController {
     
+    @warn_unused_result(message="http://git.io/rxs.uo")
     public func rx_performSegue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
         -> Observable<TypedStoryboardSegueInfo<Segue, Self, Destination>> {
         return rx_performSegue(identifier.identifier).map { TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0)! }
     }
     
+    @warn_unused_result(message="http://git.io/rxs.uo")
     public func rx_segue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
         -> Observable<(TypedStoryboardSegueInfo<Segue, Self, Destination>, AnyObject?)> {
         return rx_segue(identifier.identifier).map { (TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0.0)!, $0.1) }
     }
-
+    
+    @warn_unused_result(message="http://git.io/rxs.uo")
     public func rx_segue<Segue, Destination, O: ObservableType>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
         -> (source: O)
         -> (handler: (TypedStoryboardSegueInfo<Segue, Self, Destination>, O.E) -> Void)

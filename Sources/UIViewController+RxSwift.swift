@@ -12,6 +12,7 @@ import RxSwift
 // MARK:- Rx
 
 public extension UIViewController {
+    @warn_unused_result(message="http://git.io/rxs.uo")
     public func rx_performSegue(identifier: String) -> Observable<UIStoryboardSegue> {
         return Observable.create { [weak self] (observer) -> Disposable in
             self?.performSegue(with: identifier) { (segue) in
@@ -22,6 +23,7 @@ public extension UIViewController {
         }
     }
     
+    @warn_unused_result(message="http://git.io/rxs.uo")
     public func rx_segue(identifier: String) -> Observable<(UIStoryboardSegue, AnyObject?)> {
         return Observable.create({ [weak self] (observer) -> Disposable in
             MainScheduler.ensureExecutingOnScheduler()
@@ -40,6 +42,7 @@ public extension UIViewController {
         })
     }
     
+    @warn_unused_result(message="http://git.io/rxs.uo")
     public func rx_segue<O: ObservableType>(identifier: String)
         -> (source: O)
         -> (handler: (UIStoryboardSegue, O.E) -> Void)
