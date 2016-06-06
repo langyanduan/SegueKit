@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (Swizzle)
+/**
+ * You should never call this method directly.
+ *
+ * @note This function swizzle the 'prepareForSegue:sender:' of current class if needed.
+ */
 - (void)swz_swizzleSegueIfNeeded;
 @end
