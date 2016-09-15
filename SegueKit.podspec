@@ -52,6 +52,7 @@ Pod::Spec.new do |spec|
     ]
     extension.dependency 'SegueKit/Core'
     extension.dependency 'RxSwift', '~> 3.0.0-beta.1'
+    extension.dependency 'RxCocoa', '~> 3.0.0-beta.1'
   end
   
   spec.subspec 'Extension' do |extension|
@@ -63,6 +64,7 @@ Pod::Spec.new do |spec|
     extension.dependency 'SegueKit/R.swift'
     extension.dependency 'R.swift', '~> 3.0.0-beta.1'
     extension.dependency 'RxSwift', '~> 3.0.0-beta.1'
+    extension.dependency 'RxCocoa', '~> 3.0.0-beta.1'
   end
   
 end

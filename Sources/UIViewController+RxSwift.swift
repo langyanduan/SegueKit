@@ -8,14 +8,14 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 // MARK:- Rx
 
-public extension UIViewController {
-    
-    public func rx_performSegue(_ identifier: String) -> Observable<UIStoryboardSegue> {
-        return Observable.create { [weak self] (observer) -> Disposable in
-            self?.performSegue(with: identifier) { (segue) in
+extension Reactive where Base: UIViewController {
+    public func performSegue(_ identifier: String) -> Observable<UIStoryboardSegue> {
+        return Observable.create { (observer) -> Disposable in
+            self.base.performSegue(with: identifier) { (segue) in
                 observer.onNext(segue)
                 observer.onCompleted()
             }
@@ -23,39 +23,35 @@ public extension UIViewController {
         }
     }
     
-    
-    public func rx_segue(_ identifier: String) -> Observable<(UIStoryboardSegue, AnyObject?)> {
-        return Observable.create({ [weak self] (observer) -> Disposable in
+    public func segue(_ identifier: String) -> Observable<(UIStoryboardSegue, AnyObject?)> {
+        return Observable.create { (observer) -> Disposable in
             MainScheduler.ensureExecutingOnScheduler()
-            guard let `self` = self else {
-                return Disposables.create()
-            }
             
-            self.swz_swizzleSegueIfNeeded()
+            self.base.swz_swizzleSegueIfNeeded()
             let handler = { (segue: UIStoryboardSegue, sender: AnyObject?) in
                 observer.onNext((segue, sender))
             }
-            let context = self.aop_context.save(identifier, type: type(of: self), handler: handler, removeOnComplete: false)
-            return Disposables.create { [weak self] in
-                self?.aop_context.removeContext(context)
+            let context = self.base.aop_context.save(identifier, type: type(of: self.base), handler: handler, removeOnComplete: false)
+            return Disposables.create {
+                self.base.aop_context.removeContext(context)
             }
-        })
+        }
     }
     
-    
-    public func rx_segue<O: ObservableType>(_ identifier: String)
+    public func segue<O: ObservableType>(_ identifier: String)
         -> (_ source: O)
         -> (_ handler: @escaping (UIStoryboardSegue, O.E) -> Void)
-        -> Disposable {
+        -> Disposable
+    {
         return { source in
             return { handler in
-                return source.subscribe { [weak self] (event) in
+                return source.subscribe { (event) in
                     switch event {
                     case .next(let element):
                         let handlerWrapper: (UIStoryboardSegue) -> Void = { (segue) in
                             handler(segue, element)
                         }
-                        self?.performSegue(with: identifier, handler: handlerWrapper)
+                        self.base.performSegue(with: identifier, handler: handlerWrapper)
                     case .error(let error):
                         assertionFailure("Binding error to UI: \(error)")
                     case .completed:
@@ -66,3 +62,4 @@ public extension UIViewController {
         }
     }
 }
+

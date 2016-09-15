@@ -18,8 +18,9 @@ public protocol SeguePerformerProtocol {
 extension UIViewController: SeguePerformerProtocol { }
 
 public extension SeguePerformerProtocol where Self: UIViewController {
-    public func performSegue<Segue, Destination>(with identifier: StoryboardSegueIdentifier<Segue, Self, Destination>,
-                             handler: @escaping (TypedStoryboardSegueInfo<Segue, Self, Destination>) -> Void)
+    public func performSegue<Segue, Destination>(
+        with identifier: StoryboardSegueIdentifier<Segue, Self, Destination>,
+        handler: @escaping (TypedStoryboardSegueInfo<Segue, Self, Destination>) -> Void)
     {
         performSegue(with: identifier.identifier) { (segue) in
             if let segueInfo = TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: segue) {
