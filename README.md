@@ -155,26 +155,40 @@ it, simply add the following line to your Podfile:
 * Basic Functions
 
     ```ruby
-    pod "SegueKit"
+    pod "SegueKit", '~> 2.0.0-beta.1'
     ```
 
 * RxSwift
 
     ```ruby
-    pod "SegueKit/RxSwift"
+    pod "SegueKit/RxSwift", '~> 2.0.0-beta.1'
     ```
 
 * RxSwift
 
     ```ruby
-    pod "SegueKit/R.swift"
+    pod "SegueKit/R.swift", '~> 2.0.0-beta.1'
     ```
 
 * RxSwift + R.swift
 
     ```ruby
-    pod "SegueKit/Extension"
+    pod "SegueKit/Extension", '~> 2.0.0-beta.1'
     ```
+
+
+⚠️ If you want to use CocoaPods with Xcode 8.0 and Swift 2.3, you might need to add the following lines to your podfile:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '2.3'
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.10'
+    end
+  end
+end
+```
 
 ### Carthage
 

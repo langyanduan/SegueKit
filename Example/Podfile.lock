@@ -1,36 +1,26 @@
 PODS:
-  - R.swift (2.2.2):
-    - R.swift.Library (~> 2.1.0)
-  - R.swift.Library (2.1.0)
-  - RxCocoa (2.4):
-    - RxSwift (~> 2.4)
-  - RxDataSources (0.8):
-    - RxCocoa (~> 2.2)
-    - RxSwift (~> 2.2)
-  - RxOptional (2.0.0):
-    - RxCocoa (~> 2.0)
+  - R.swift (2.5.0):
+    - R.swift.Library (~> 2.3.0)
+  - R.swift.Library (2.3.0)
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxSwift (2.6.0)
+  - SegueKit/Core (2.0.0-beta.1)
+  - SegueKit/Extension (2.0.0-beta.1):
+    - R.swift (~> 2.0)
     - RxSwift (~> 2.0)
-  - RxSwift (2.4)
-  - SegueKit/Core (0.1.4)
-  - SegueKit/Extension (0.1.4):
-    - R.swift
-    - RxSwift
     - SegueKit/Core
     - SegueKit/R.swift
     - SegueKit/RxSwift
-  - SegueKit/R.swift (0.1.4):
-    - R.swift
+  - SegueKit/R.swift (2.0.0-beta.1):
+    - R.swift (~> 2.0)
     - SegueKit/Core
-  - SegueKit/RxSwift (0.1.4):
-    - RxSwift
+  - SegueKit/RxSwift (2.0.0-beta.1):
+    - RxSwift (~> 2.0)
     - SegueKit/Core
 
 DEPENDENCIES:
-  - R.swift
-  - RxCocoa
-  - RxDataSources
-  - RxOptional
-  - RxSwift
+  - RxCocoa (~> 2.0)
   - SegueKit/Extension (from `../`)
 
 EXTERNAL SOURCES:
@@ -38,14 +28,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  R.swift: ed40b24d65ad70c6cf48a2f249a26a3e5a4a7bc0
-  R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
-  RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
-  RxDataSources: 8755a221c065930a75cf24020f6f2c63713c486e
-  RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
-  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
-  SegueKit: 2ceb393ed222179228d0322313268cdb01360f11
+  R.swift: 01b9966e8dbe587a11ca2f65a1834dac2fa7b247
+  R.swift.Library: 75df6abfd22492c852136c4d7b6a9ca21664772a
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  SegueKit: ad44ff47eb5bb6dbf045aec7e28f6890ea133136
 
-PODFILE CHECKSUM: a036620234356eb950deac8afc31f8232a449944
+PODFILE CHECKSUM: 29ca9d6626205a5fc09f6d3da8f7dce51d5a9d8f
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.0.beta.2
