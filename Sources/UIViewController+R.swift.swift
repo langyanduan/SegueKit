@@ -12,14 +12,14 @@ import Rswift
 // MARK:- R.swift
 
 public protocol SeguePerformerProtocol {
-    func performSegue(with identifier: String, handler: UIStoryboardSegue -> Void)
+    func performSegue(with identifier: String, handler: @escaping (UIStoryboardSegue) -> Void)
 }
 
 extension UIViewController: SeguePerformerProtocol { }
 
 public extension SeguePerformerProtocol where Self: UIViewController {
     public func performSegue<Segue, Destination>(with identifier: StoryboardSegueIdentifier<Segue, Self, Destination>,
-                             handler: (TypedStoryboardSegueInfo<Segue, Self, Destination>) -> Void)
+                             handler: @escaping (TypedStoryboardSegueInfo<Segue, Self, Destination>) -> Void)
     {
         performSegue(with: identifier.identifier) { (segue) in
             if let segueInfo = TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: segue) {

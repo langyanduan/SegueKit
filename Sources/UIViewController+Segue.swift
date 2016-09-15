@@ -15,7 +15,7 @@ class SegueObject {
         let handler: (UIStoryboardSegue, AnyObject?) -> Void
         let removeOnComplete: Bool
         
-        init(identifier: String, type: AnyObject.Type, handler: (UIStoryboardSegue, AnyObject?) -> Void, removeOnComplete: Bool) {
+        init(identifier: String, type: AnyObject.Type, handler: @escaping (UIStoryboardSegue, AnyObject?) -> Void, removeOnComplete: Bool) {
             self.identifier = identifier
             self.type = type
             self.handler = handler
@@ -25,15 +25,16 @@ class SegueObject {
     
     var contexts: [Context] = []
     
-    func save(identifier: String, type: AnyObject.Type, handler: (UIStoryboardSegue, AnyObject?) -> Void, removeOnComplete: Bool) -> Context {
+    @discardableResult
+    func save(_ identifier: String, type: AnyObject.Type, handler: @escaping (UIStoryboardSegue, AnyObject?) -> Void, removeOnComplete: Bool) -> Context {
         let context = Context(identifier: identifier, type: type, handler: handler, removeOnComplete: removeOnComplete)
         contexts.append(context)
         return context
     }
     
-    func removeContext(context: Context) {
+    func removeContext(_ context: Context) {
         var index: Int?
-        for (i, ctx) in contexts.enumerate() {
+        for (i, ctx) in contexts.enumerated() {
             if ctx === context {
                 index = i
                 break
@@ -41,11 +42,11 @@ class SegueObject {
         }
         
         if let index = index {
-            contexts.removeAtIndex(index)
+            contexts.remove(at: index)
         }
     }
     
-    func query(identifier: String, type: AnyObject.Type) -> [Context] {
+    func query(_ identifier: String, type: AnyObject.Type) -> [Context] {
         var list = [Context]()
         for context in contexts {
             if context.identifier == identifier && context.type == type {
@@ -78,7 +79,6 @@ extension UIViewController {
         let list = aop_context.query(identifier, type: type)
         for context in list {
             context.handler(segue, sender)
-            
             if context.removeOnComplete {
                 aop_context.removeContext(context)
             }
@@ -89,12 +89,12 @@ extension UIViewController {
 // MARK:- Public 
 
 public extension UIViewController {
-    public func performSegue(with identifier: String, handler: UIStoryboardSegue -> Void) {
+    public func performSegue(with identifier: String, handler: @escaping (UIStoryboardSegue) -> Void) {
         swz_swizzleSegueIfNeeded()
         let handlerWrapper: (UIStoryboardSegue, AnyObject?) -> Void = { (segue, sender) in
             handler(segue)
         }
-        aop_context.save(identifier, type: self.dynamicType, handler: handlerWrapper, removeOnComplete: true)
-        performSegueWithIdentifier(identifier, sender: nil)
+        aop_context.save(identifier, type: type(of: self), handler: handlerWrapper, removeOnComplete: true)
+        self.performSegue(withIdentifier: identifier, sender: nil)
     }
 }

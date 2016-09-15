@@ -1,26 +1,26 @@
 PODS:
-  - R.swift (2.5.0):
-    - R.swift.Library (~> 2.3.0)
-  - R.swift.Library (2.3.0)
-  - RxCocoa (2.6.0):
-    - RxSwift (~> 2.5)
-  - RxSwift (2.6.0)
-  - SegueKit/Core (2.0.0-beta.1)
-  - SegueKit/Extension (2.0.0-beta.1):
-    - R.swift (~> 2.0)
-    - RxSwift (~> 2.0)
+  - R.swift (3.0.0):
+    - R.swift.Library (~> 3.0.0)
+  - R.swift.Library (3.0.0)
+  - RxCocoa (3.0.0-beta.1):
+    - RxSwift (~> 3.0.0-beta.1)
+  - RxSwift (3.0.0-beta.1)
+  - SegueKit/Core (3.0.0-beta.1)
+  - SegueKit/Extension (3.0.0-beta.1):
+    - R.swift (~> 3.0.0-beta.1)
+    - RxSwift (~> 3.0.0-beta.1)
     - SegueKit/Core
     - SegueKit/R.swift
     - SegueKit/RxSwift
-  - SegueKit/R.swift (2.0.0-beta.1):
-    - R.swift (~> 2.0)
+  - SegueKit/R.swift (3.0.0-beta.1):
+    - R.swift (~> 3.0.0-beta.1)
     - SegueKit/Core
-  - SegueKit/RxSwift (2.0.0-beta.1):
-    - RxSwift (~> 2.0)
+  - SegueKit/RxSwift (3.0.0-beta.1):
+    - RxSwift (~> 3.0.0-beta.1)
     - SegueKit/Core
 
 DEPENDENCIES:
-  - RxCocoa (~> 2.0)
+  - RxCocoa (~> 3.0.0-beta.1)
   - SegueKit/Extension (from `../`)
 
 EXTERNAL SOURCES:
@@ -28,12 +28,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  R.swift: 01b9966e8dbe587a11ca2f65a1834dac2fa7b247
-  R.swift.Library: 75df6abfd22492c852136c4d7b6a9ca21664772a
-  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
-  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
-  SegueKit: ad44ff47eb5bb6dbf045aec7e28f6890ea133136
+  R.swift: 5a8b4a4ea565b0f20c39d8ce1445f3d3a9064768
+  R.swift.Library: fed723da260519abed60044de7aaf19494cc4e1f
+  RxCocoa: 8cecf331302b8ae5381bbab1bccba4ede2eae6a8
+  RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
+  SegueKit: 98e519fc45ce26fb1cd196917eb57e181ca34dd7
 
-PODFILE CHECKSUM: 29ca9d6626205a5fc09f6d3da8f7dce51d5a9d8f
+PODFILE CHECKSUM: 3d6c94e319a7bd00675254e88f346bcc4556f6ec
 
 COCOAPODS: 1.1.0.beta.2

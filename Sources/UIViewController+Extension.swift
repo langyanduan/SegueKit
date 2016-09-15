@@ -13,11 +13,11 @@ import Rswift
 // MARK:- Rx, R.swift
 
 public protocol RxSeguePerformerProtocol {
-    func rx_performSegue(identifier: String) -> Observable<UIStoryboardSegue>
-    func rx_segue(identifier: String) -> Observable<(UIStoryboardSegue, AnyObject?)>
-    func rx_segue<O: ObservableType>(identifier: String)
-        -> (source: O)
-        -> (handler: (UIStoryboardSegue, O.E) -> Void)
+    func rx_performSegue(_ identifier: String) -> Observable<UIStoryboardSegue>
+    func rx_segue(_ identifier: String) -> Observable<(UIStoryboardSegue, AnyObject?)>
+    func rx_segue<O: ObservableType>(_ identifier: String)
+        -> (_ source: O)
+        -> (_ handler: @escaping (UIStoryboardSegue, O.E) -> Void)
         -> Disposable
 }
 
@@ -25,22 +25,22 @@ extension UIViewController: RxSeguePerformerProtocol { }
 
 public extension RxSeguePerformerProtocol where Self: UIViewController {
     
-    @warn_unused_result(message="http://git.io/rxs.uo")
-    public func rx_performSegue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
+    
+    public func rx_performSegue<Segue, Destination>(_ identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
         -> Observable<TypedStoryboardSegueInfo<Segue, Self, Destination>> {
         return rx_performSegue(identifier.identifier).map { TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0)! }
     }
     
-    @warn_unused_result(message="http://git.io/rxs.uo")
-    public func rx_segue<Segue, Destination>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
+    
+    public func rx_segue<Segue, Destination>(_ identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
         -> Observable<(TypedStoryboardSegueInfo<Segue, Self, Destination>, AnyObject?)> {
         return rx_segue(identifier.identifier).map { (TypedStoryboardSegueInfo(segueIdentifier: identifier, segue: $0.0)!, $0.1) }
     }
     
-    @warn_unused_result(message="http://git.io/rxs.uo")
-    public func rx_segue<Segue, Destination, O: ObservableType>(identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
-        -> (source: O)
-        -> (handler: (TypedStoryboardSegueInfo<Segue, Self, Destination>, O.E) -> Void)
+    
+    public func rx_segue<Segue, Destination, O: ObservableType>(_ identifier: StoryboardSegueIdentifier<Segue, Self, Destination>)
+        -> (_ source: O)
+        -> (_ handler: @escaping (TypedStoryboardSegueInfo<Segue, Self, Destination>, O.E) -> Void)
         -> Disposable {
         return { source in
             return { [weak self] handler in
@@ -51,7 +51,7 @@ public extension RxSeguePerformerProtocol where Self: UIViewController {
                         assertionFailure()
                     }
                 }
-                return self?.rx_segue(identifier.identifier)(source: source)(handler: handlerWrapper) ?? NopDisposable.instance
+                return self?.rx_segue(identifier.identifier)(source)(handlerWrapper) ?? Disposables.create()
             }
         }
     }
