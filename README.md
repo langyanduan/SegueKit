@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     // basic
     @IBAction func onBtnA(sender: AnyObject) {
         performSegue(with: "A") { (segue) in
-            segue.destinationViewController.view.backgroundColor = UIColor.yellowColor()
+            segue.destination.view.backgroundColor = UIColor.yellow
         }
     }
 }
@@ -47,24 +47,24 @@ class ViewController: UIViewController {
     // with R.swift
     @IBAction func onBtnB(sender: AnyObject) {
         performSegue(with: R.segue.viewController.b) { (segue) in
-            segue.destinationViewController.view.backgroundColor = UIColor.greenColor()
+            segue.destination.view.backgroundColor = UIColor.green
         }
     }
     
     // with Rx
     @IBAction func onBtnC(sender: AnyObject) {
-        rx_performSegue("C")
+        rx.performSegue("C")
             .subscribeNext { (segue) in
-                segue.destinationViewController.view.backgroundColor = UIColor.redColor()
+                segue.destination.view.backgroundColor = UIColor.red
             }
             .addDisposableTo(disposeBag)
     }
     
     // with Rx + R.swift
     @IBAction func onBtnD(sender: AnyObject) {
-        rx_performSegue(R.segue.viewController.d)
+        rx.performSegue(R.segue.viewController.d)
             .subscribeNext { (segue) in
-                segue.destinationViewController.view.backgroundColor = UIColor.blueColor()
+                segue.destination.view.backgroundColor = UIColor.blue
             }
             .addDisposableTo(disposeBag)
     }
@@ -84,8 +84,8 @@ class A: UIViewController {
         super.viewDidLoad()
         
         // with Rx
-        button.rx_tap.bindTo(rx_segue("A")) { (segue, _) in
-            segue.destinationViewController.view.backgroundColor = UIColor.blackColor()
+        button.rx.tap.bindTo(rx.segue("A")) { (segue, _) in
+            segue.destination.view.backgroundColor = UIColor.black
         }.addDisposableTo(disposeBag)
     }
 }
@@ -99,8 +99,8 @@ class B: UIViewController {
         super.viewDidLoad()
         
         // with Rx + R.swift
-        button.rx_tap.bindTo(rx_segue(R.segue.b.b)) { (segue, _) in
-            segue.destinationViewController.view.backgroundColor = UIColor.brownColor()
+        button.rx.tap.bindTo(rx.segue(R.segue.b.b)) { (segue, _) in
+            segue.destination.view.backgroundColor = UIColor.brown
         }.addDisposableTo(disposeBag)
     }
 
@@ -120,8 +120,8 @@ class C: UIViewController {
         super.viewDidLoad()
         
         // with Rx
-        rx_segue("C").subscribeNext { (segue, sender) in
-            segue.destinationViewController.view.backgroundColor = UIColor.purpleColor()
+        rx.segue("C").subscribeNext { (segue, sender) in
+            segue.destination.view.backgroundColor = UIColor.purple
         }.addDisposableTo(disposeBag)
     }
 }
@@ -133,8 +133,8 @@ class D: UIViewController {
         super.viewDidLoad()
         
         // with Rx + R.swift
-        rx_segue(R.segue.d.d).subscribeNext { (segue, sender) in
-            segue.destinationViewController.view.backgroundColor = UIColor.orangeColor()
+        rx.segue(R.segue.d.d).subscribeNext { (segue, sender) in
+            segue.destination.view.backgroundColor = UIColor.orange
         }.addDisposableTo(disposeBag)
     }
 }
@@ -155,35 +155,35 @@ it, simply add the following line to your Podfile:
 * Basic Functions
 
     ```ruby
-    pod "SegueKit", '~> 2.0.0-beta.1'
+    pod "SegueKit", '~> 3.0.0-beta.1'
     ```
 
 * RxSwift
 
     ```ruby
-    pod "SegueKit/RxSwift", '~> 2.0.0-beta.1'
+    pod "SegueKit/RxSwift", '~> 3.0.0-beta.1'
     ```
 
 * RxSwift
 
     ```ruby
-    pod "SegueKit/R.swift", '~> 2.0.0-beta.1'
+    pod "SegueKit/R.swift", '~> 3.0.0-beta.1'
     ```
 
 * RxSwift + R.swift
 
     ```ruby
-    pod "SegueKit/Extension", '~> 2.0.0-beta.1'
+    pod "SegueKit/Extension", '~> 3.0.0-beta.1'
     ```
 
 
-⚠️ If you want to use CocoaPods with Xcode 8.0 and Swift 2.3, you might need to add the following lines to your podfile:
+⚠️ If you want to use CocoaPods with Xcode 8.0 and Swift 3.0, you might need to add the following lines to your podfile:
 
 ```ruby
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '2.3'
+      config.build_settings['SWIFT_VERSION'] = '3.0'
       config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.10'
     end
   end
