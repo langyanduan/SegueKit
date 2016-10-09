@@ -5,18 +5,18 @@ PODS:
   - RxCocoa (3.0.0-beta.1):
     - RxSwift (~> 3.0.0-beta.1)
   - RxSwift (3.0.0-beta.1)
-  - SegueKit/Core (3.0.0-beta.1)
-  - SegueKit/Extension (3.0.0-beta.1):
-    - R.swift (~> 3.0.0-beta.1)
+  - SegueKit/Core (3.0.0-beta.2)
+  - SegueKit/Extension (3.0.0-beta.2):
+    - R.swift (~> 3.0.0)
     - RxCocoa (~> 3.0.0-beta.1)
     - RxSwift (~> 3.0.0-beta.1)
     - SegueKit/Core
     - SegueKit/R.swift
     - SegueKit/RxSwift
-  - SegueKit/R.swift (3.0.0-beta.1):
-    - R.swift (~> 3.0.0-beta.1)
+  - SegueKit/R.swift (3.0.0-beta.2):
+    - R.swift (~> 3.0.0)
     - SegueKit/Core
-  - SegueKit/RxSwift (3.0.0-beta.1):
+  - SegueKit/RxSwift (3.0.0-beta.2):
     - RxCocoa (~> 3.0.0-beta.1)
     - RxSwift (~> 3.0.0-beta.1)
     - SegueKit/Core
@@ -34,7 +34,7 @@ SPEC CHECKSUMS:
   R.swift.Library: fed723da260519abed60044de7aaf19494cc4e1f
   RxCocoa: 8cecf331302b8ae5381bbab1bccba4ede2eae6a8
   RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
-  SegueKit: af6f35b012207caf0b8f576a7264ba3ddb5a0ad0
+  SegueKit: af0f217afa9c48431e7b3f91b5e04eed9c3b86ce
 
 PODFILE CHECKSUM: 3d6c94e319a7bd00675254e88f346bcc4556f6ec
 
