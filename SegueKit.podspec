@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'SegueKit'
-  spec.version          = '2.0.0-beta.1'
+  spec.version          = '2.0.0-beta.2'
   spec.summary          = 'Perform storyboard segues with closures, support RxSwift and R.swift.'
   
   spec.description      = <<-DESC
