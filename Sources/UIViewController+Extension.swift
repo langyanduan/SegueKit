@@ -40,7 +40,7 @@ extension Reactive where Base: UIViewController {
                         assertionFailure()
                     }
                 }
-                return self.segue(identifier.identifier)(source)(handlerWrapper) ?? Disposables.create()
+                return self.segue(identifier.identifier)(source)(handlerWrapper)
             }
         }
     }
