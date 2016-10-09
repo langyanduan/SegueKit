@@ -59,7 +59,7 @@ class SegueObject {
 
 // MARK:- AOP
 
-private var kSegueObjectKey: Void = ()
+private var kSegueObjectKey = 0
 extension UIViewController {
     var aop_context: SegueObject {
         if let obj = objc_getAssociatedObject(self, &kSegueObjectKey) as? SegueObject {
