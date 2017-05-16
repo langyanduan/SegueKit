@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'SegueKit'
-  spec.version          = '3.0.0-beta.2'
+  spec.version          = '3.0.0'
   spec.summary          = 'Perform storyboard segues with closures, support RxSwift and R.swift.'
   
   spec.description      = <<-DESC
@@ -43,7 +43,7 @@ Pod::Spec.new do |spec|
       'Sources/UIViewController+R.swift.swift'
     ]
     extension.dependency 'SegueKit/Core'
-    extension.dependency 'R.swift', '~> 3.0.0'
+    extension.dependency 'R.swift', '~> 3.0'
   end
   
   spec.subspec 'RxSwift' do |extension|
@@ -51,8 +51,8 @@ Pod::Spec.new do |spec|
       'Sources/UIViewController+RxSwift.swift'
     ]
     extension.dependency 'SegueKit/Core'
-    extension.dependency 'RxSwift', '~> 3.0.0-beta.1'
-    extension.dependency 'RxCocoa', '~> 3.0.0-beta.1'
+    extension.dependency 'RxSwift', '~> 3.0'
+    extension.dependency 'RxCocoa', '~> 3.0'
   end
   
   spec.subspec 'Extension' do |extension|
@@ -62,9 +62,9 @@ Pod::Spec.new do |spec|
     extension.dependency 'SegueKit/Core'
     extension.dependency 'SegueKit/RxSwift'
     extension.dependency 'SegueKit/R.swift'
-    extension.dependency 'R.swift', '~> 3.0.0'
-    extension.dependency 'RxSwift', '~> 3.0.0-beta.1'
-    extension.dependency 'RxCocoa', '~> 3.0.0-beta.1'
+    extension.dependency 'R.swift', '~> 3.0'
+    extension.dependency 'RxSwift', '~> 3.0'
+    extension.dependency 'RxCocoa', '~> 3.0'
   end
   
 end
